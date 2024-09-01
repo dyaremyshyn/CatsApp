@@ -43,6 +43,7 @@ class CatViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .caption1)
+        label.numberOfLines = 0
         return label
     }()
     

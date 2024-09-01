@@ -77,24 +77,23 @@ public class CatsViewController: UIViewController {
     private func createViewLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { (index, env) -> NSCollectionLayoutSection? in
                         
-            // Define the size for each item
+            // Define the size for each item. Since we want 3 items per row,
+            // the width of each item should be 1/3 of the group's width.
             let itemSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
+                widthDimension: .fractionalWidth(1.0 / 3.0),
                 heightDimension: .fractionalHeight(1.0)
             )
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            
-            // Set the spacing around each item
-//            item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
             
             // Define the group that contains three items horizontally
             let groupSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .absolute(150)
             )
+            
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: groupSize,
-                subitem: item,
+                repeatingSubitem: item,
                 count: 3
             )
             
