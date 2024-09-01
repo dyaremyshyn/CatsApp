@@ -70,7 +70,9 @@ public class CatsViewController: UIViewController {
         view.addSubview(collectionView)
         
         setupSearchController()
-
+        
+        // Set the delegate for the collection view
+        collectionView.delegate = self
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -159,5 +161,14 @@ extension CatsViewController {
             cancelTitle: CatsPresenter.cancelDialogTitle,
             actionTitle: CatsPresenter.retryDialogTitle,
             retryCompletion: viewModel?.loadData)
+    }
+}
+
+// MARK: - UICollectionViewDelegate - didSelectItemAt
+extension CatsViewController: UICollectionViewDelegate {
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectedBreed = viewModel?.fetchedBreeds?[indexPath.row] else { return }
+        viewModel?.selected(breed: selectedBreed)
     }
 }
