@@ -16,6 +16,7 @@
 		8C9A709B2C84A358007D7D94 /* CatsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A709A2C84A358007D7D94 /* CatsAppTests.swift */; };
 		8C9A70A52C84A358007D7D94 /* CatsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70A42C84A358007D7D94 /* CatsAppUITests.swift */; };
 		8C9A70A72C84A358007D7D94 /* CatsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70A62C84A358007D7D94 /* CatsAppUITestsLaunchTests.swift */; };
+		8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70BC2C84A770007D7D94 /* NetworkHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8C9A70A02C84A358007D7D94 /* CatsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9A70A42C84A358007D7D94 /* CatsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsAppUITests.swift; sourceTree = "<group>"; };
 		8C9A70A62C84A358007D7D94 /* CatsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C9A70BC2C84A770007D7D94 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		8C9A70B62C84A6CA007D7D94 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8C9A70B92C84A746007D7D94 /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -173,6 +176,30 @@
 				8C9A70842C84A357007D7D94 /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8C9A70B92C84A746007D7D94 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70BB2C84A757007D7D94 /* Helpers */,
+				8C9A70BA2C84A751007D7D94 /* Protocols */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8C9A70BA2C84A751007D7D94 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8C9A70BB2C84A757007D7D94 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70BC2C84A770007D7D94 /* NetworkHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +334,7 @@
 			files = (
 				8C9A708B2C84A357007D7D94 /* CatsApp.xcdatamodeld in Sources */,
 				8C9A70852C84A357007D7D94 /* ViewController.swift in Sources */,
+				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
 				8C9A70812C84A357007D7D94 /* AppDelegate.swift in Sources */,
 				8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */,
 			);
