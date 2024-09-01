@@ -99,13 +99,14 @@
 		8C9A707F2C84A357007D7D94 /* CatsApp */ = {
 			isa = PBXGroup;
 			children = (
+				8C9A70B72C84A6D9007D7D94 /* Models */,
+				8C9A70B62C84A6CA007D7D94 /* Services */,
+				8C9A70B52C84A6BF007D7D94 /* ViewModels */,
+				8C9A70B42C84A6B5007D7D94 /* UI */,
+				8C9A70B32C84A6A6007D7D94 /* Resources */,
 				8C9A70802C84A357007D7D94 /* AppDelegate.swift */,
 				8C9A70822C84A357007D7D94 /* SceneDelegate.swift */,
-				8C9A70842C84A357007D7D94 /* ViewController.swift */,
-				8C9A708C2C84A358007D7D94 /* Assets.xcassets */,
-				8C9A708E2C84A358007D7D94 /* LaunchScreen.storyboard */,
 				8C9A70912C84A358007D7D94 /* Info.plist */,
-				8C9A70892C84A357007D7D94 /* CatsApp.xcdatamodeld */,
 			);
 			path = CatsApp;
 			sourceTree = "<group>";
@@ -125,6 +126,53 @@
 				8C9A70A62C84A358007D7D94 /* CatsAppUITestsLaunchTests.swift */,
 			);
 			path = CatsAppUITests;
+			sourceTree = "<group>";
+		};
+		8C9A70B32C84A6A6007D7D94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A708C2C84A358007D7D94 /* Assets.xcassets */,
+				8C9A70892C84A357007D7D94 /* CatsApp.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8C9A70B42C84A6B5007D7D94 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70B82C84A6F2007D7D94 /* ViewControllers */,
+				8C9A708E2C84A358007D7D94 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8C9A70B52C84A6BF007D7D94 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8C9A70B62C84A6CA007D7D94 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8C9A70B72C84A6D9007D7D94 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8C9A70B82C84A6F2007D7D94 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70842C84A357007D7D94 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
