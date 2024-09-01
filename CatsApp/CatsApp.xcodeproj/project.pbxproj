@@ -17,6 +17,10 @@
 		8C9A70A52C84A358007D7D94 /* CatsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70A42C84A358007D7D94 /* CatsAppUITests.swift */; };
 		8C9A70A72C84A358007D7D94 /* CatsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70A62C84A358007D7D94 /* CatsAppUITestsLaunchTests.swift */; };
 		8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70BC2C84A770007D7D94 /* NetworkHelper.swift */; };
+		8C9A70BF2C84B024007D7D94 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70BE2C84B024007D7D94 /* Weight.swift */; };
+		8C9A70C12C84B043007D7D94 /* CatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70C02C84B043007D7D94 /* CatBreed.swift */; };
+		8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70C22C84B0BE007D7D94 /* CatImage.swift */; };
+		8C9A70C52C84B1E9007D7D94 /* BreedsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70C42C84B1E9007D7D94 /* BreedsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		8C9A70A42C84A358007D7D94 /* CatsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsAppUITests.swift; sourceTree = "<group>"; };
 		8C9A70A62C84A358007D7D94 /* CatsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8C9A70BC2C84A770007D7D94 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		8C9A70BE2C84B024007D7D94 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
+		8C9A70C02C84B043007D7D94 /* CatBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreed.swift; sourceTree = "<group>"; };
+		8C9A70C22C84B0BE007D7D94 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
+		8C9A70C42C84B1E9007D7D94 /* BreedsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,10 @@
 		8C9A70B72C84A6D9007D7D94 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8C9A70C02C84B043007D7D94 /* CatBreed.swift */,
+				8C9A70BE2C84B024007D7D94 /* Weight.swift */,
+				8C9A70C22C84B0BE007D7D94 /* CatImage.swift */,
+				8C9A70C42C84B1E9007D7D94 /* BreedsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,10 +345,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C9A708B2C84A357007D7D94 /* CatsApp.xcdatamodeld in Sources */,
+				8C9A70C12C84B043007D7D94 /* CatBreed.swift in Sources */,
 				8C9A70852C84A357007D7D94 /* ViewController.swift in Sources */,
+				8C9A70C52C84B1E9007D7D94 /* BreedsResponse.swift in Sources */,
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
+				8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */,
 				8C9A70812C84A357007D7D94 /* AppDelegate.swift in Sources */,
 				8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */,
+				8C9A70BF2C84B024007D7D94 /* Weight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
