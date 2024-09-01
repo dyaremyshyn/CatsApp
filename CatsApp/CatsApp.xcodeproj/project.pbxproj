@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C9A70812C84A357007D7D94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70802C84A357007D7D94 /* AppDelegate.swift */; };
 		8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70822C84A357007D7D94 /* SceneDelegate.swift */; };
-		8C9A70852C84A357007D7D94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70842C84A357007D7D94 /* ViewController.swift */; };
+		8C9A70852C84A357007D7D94 /* CatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70842C84A357007D7D94 /* CatsViewController.swift */; };
 		8C9A708B2C84A357007D7D94 /* CatsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70892C84A357007D7D94 /* CatsApp.xcdatamodeld */; };
 		8C9A708D2C84A358007D7D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9A708C2C84A358007D7D94 /* Assets.xcassets */; };
 		8C9A70902C84A358007D7D94 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8C9A708F2C84A358007D7D94 /* Base */; };
@@ -49,7 +49,7 @@
 		8C9A707D2C84A357007D7D94 /* CatsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9A70802C84A357007D7D94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C9A70822C84A357007D7D94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C9A70842C84A357007D7D94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C9A70842C84A357007D7D94 /* CatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewController.swift; sourceTree = "<group>"; };
 		8C9A708A2C84A357007D7D94 /* CatsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatsApp.xcdatamodel; sourceTree = "<group>"; };
 		8C9A708C2C84A358007D7D94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C9A708F2C84A358007D7D94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		8C9A70B82C84A6F2007D7D94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8C9A70842C84A357007D7D94 /* ViewController.swift */,
+				8C9A70842C84A357007D7D94 /* CatsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,9 +361,9 @@
 			files = (
 				8C9A708B2C84A357007D7D94 /* CatsApp.xcdatamodeld in Sources */,
 				8C9A70C12C84B043007D7D94 /* CatBreed.swift in Sources */,
-				8C9A70852C84A357007D7D94 /* ViewController.swift in Sources */,
 				8C9A70CD2C84BC7D007D7D94 /* BreedsNetworkService.swift in Sources */,
 				8C9A70CF2C84BF3F007D7D94 /* CatsViewModel.swift in Sources */,
+				8C9A70852C84A357007D7D94 /* CatsViewController.swift in Sources */,
 				8C9A70C52C84B1E9007D7D94 /* BreedsResponse.swift in Sources */,
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
 				8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */,
