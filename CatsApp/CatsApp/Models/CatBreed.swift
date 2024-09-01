@@ -8,24 +8,24 @@
 import Foundation
 
 public struct CatBreed: Decodable {
-    let weight: Weight
+    let weight: Weight?
     let id, name: String
     let cfaURL: String?
-    let vetstreetURL: String
+    let vetstreetURL: String?
     let vcahospitalsURL: String?
-    let temperament, origin, countryCodes, countryCode: String
-    let description, lifeSpan: String
+    let temperament, origin, countryCodes, countryCode: String?
+    let description, lifeSpan: String?
     let indoor, lap: Int?
-    let altNames: String
-    let adaptability, affectionLevel, childFriendly, dogFriendly: Int
-    let energyLevel, grooming, healthIssues, intelligence: Int
-    let sheddingLevel, socialNeeds, strangerFriendly, vocalisation: Int
-    let experimental, hairless, natural, rare, rex: Int
-    let suppressedTail, shortLegs: Int
-    let wikipediaURL: String
-    let hypoallergenic: Int
-    let referenceImageID: String
-    let image: CatImage
+    let altNames: String?
+    let adaptability, affectionLevel, childFriendly, dogFriendly: Int?
+    let energyLevel, grooming, healthIssues, intelligence: Int?
+    let sheddingLevel, socialNeeds, strangerFriendly, vocalisation: Int?
+    let experimental, hairless, natural, rare, rex: Int?
+    let suppressedTail, shortLegs: Int?
+    let wikipediaURL: String?
+    let hypoallergenic: Int?
+    let referenceImageID: String?
+    let image: CatImage?
 
     enum CodingKeys: String, CodingKey {
         case weight, id, name

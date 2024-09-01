@@ -25,6 +25,7 @@
 		8C9A70C92C84BBBE007D7D94 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70C82C84BBBE007D7D94 /* HTTPClient.swift */; };
 		8C9A70CB2C84BBE6007D7D94 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CA2C84BBE6007D7D94 /* URLSessionHTTPClient.swift */; };
 		8C9A70CD2C84BC7D007D7D94 /* BreedsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CC2C84BC7D007D7D94 /* BreedsNetworkService.swift */; };
+		8C9A70CF2C84BF3F007D7D94 /* CatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		8C9A70C82C84BBBE007D7D94 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		8C9A70CA2C84BBE6007D7D94 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		8C9A70CC2C84BC7D007D7D94 /* BreedsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsNetworkService.swift; sourceTree = "<group>"; };
+		8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		8C9A70B52C84A6BF007D7D94 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				8C9A70C12C84B043007D7D94 /* CatBreed.swift in Sources */,
 				8C9A70852C84A357007D7D94 /* ViewController.swift in Sources */,
 				8C9A70CD2C84BC7D007D7D94 /* BreedsNetworkService.swift in Sources */,
+				8C9A70CF2C84BF3F007D7D94 /* CatsViewModel.swift in Sources */,
 				8C9A70C52C84B1E9007D7D94 /* BreedsResponse.swift in Sources */,
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
 				8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */,
