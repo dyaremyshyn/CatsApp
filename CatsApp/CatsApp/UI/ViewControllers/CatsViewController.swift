@@ -10,6 +10,8 @@ import Combine
 
 public class CatsViewController: UIViewController {
 
+    private let searchController = UISearchController(searchResultsController: nil)
+
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createViewLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +21,6 @@ public class CatsViewController: UIViewController {
     }()
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, CatBreed>!
-
     
     private var cancellables = Set<AnyCancellable>()
     var viewModel: CatsViewModel? {
@@ -67,11 +68,26 @@ public class CatsViewController: UIViewController {
         title = viewModel?.title
         view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
+        
+        setupSearchController()
 
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
+    private func setupSearchController() {
+        // Set the searchResultsUpdater to self
+        searchController.searchResultsUpdater = self
+        // Place the search bar in the navigation bar.
+        navigationItem.searchController = searchController
+        // Don't obscure the background when the user is searching
+        searchController.obscuresBackgroundDuringPresentation = false
+        // Customize the search bar placeholder
+        searchController.searchBar.placeholder = viewModel?.searchPlaceholder
+        // Ensure the search bar doesn't remain on the screen if the user navigates to another view controller while the UISearchController is active
+        definesPresentationContext = true
     }
     
     private func createViewLayout() -> UICollectionViewLayout {
@@ -117,8 +133,18 @@ public class CatsViewController: UIViewController {
     }
 }
 
+// MARK: - Favorite Delegate
 extension CatsViewController: FavoriteDelegate {
+    
     func toggleFavorite(breed: CatBreed, isFavorite: Bool) {
         viewModel?.toggleFavorite(breed: breed, isFavorite: isFavorite)
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+extension CatsViewController : UISearchResultsUpdating {
+    
+    public func updateSearchResults(for searchController: UISearchController) {
+        viewModel?.search(for: searchController.searchBar.text)
     }
 }

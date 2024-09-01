@@ -11,6 +11,11 @@ import Combine
 class CatsViewModel: ObservableObject {
     @Published var fetchedBreeds: BreedsResponse?
     @Published var errorMessage: String? = nil
+    private var allBreeds: BreedsResponse? {
+        willSet {
+            fetchedBreeds = newValue
+        }
+    }
     private var cancellables = Set<AnyCancellable>()
     
     private let client: HTTPClient
@@ -26,6 +31,10 @@ class CatsViewModel: ObservableObject {
     public var title: String {
         "Cats App"
     }
+    
+    public var searchPlaceholder: String {
+        "Search"
+    }
 
     public func loadData() {
         fetchBreeds()
@@ -39,6 +48,15 @@ class CatsViewModel: ObservableObject {
         // Apply favorite to given breed
         if let index = fetchedBreeds?.firstIndex(where: { $0.id == breed.id }) {
             fetchedBreeds?[index].isFavorite = isFavorite
+        }
+    }
+    
+    public func search(for breedName: String?) {
+        if breedName?.isEmpty ?? true {
+            fetchedBreeds = allBreeds
+        } else {
+            guard let breed = breedName else { return }
+            fetchedBreeds = allBreeds?.filter { $0.name.lowercased().contains(breed.lowercased()) }
         }
     }
 }
@@ -61,7 +79,7 @@ extension CatsViewModel {
             } receiveValue: { [weak self] response in
                 guard let self = self else { return }
                 self.errorMessage = nil
-                self.fetchedBreeds = response
+                self.allBreeds = response
             }
             .store(in: &cancellables)
     }
