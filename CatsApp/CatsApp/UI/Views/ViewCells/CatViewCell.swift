@@ -69,6 +69,7 @@ class CatViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         breedNameLabel.text = ""
         breedImageView.image = UIImage(systemName: "cat")
+        favoriteButton.setBackgroundImage(starImage, for: .normal)
     }
     
     private func setupView() {
@@ -92,6 +93,7 @@ class CatViewCell: UICollectionViewCell {
     public func configure(model: CatBreed) {
         self.model = model
         breedNameLabel.text = model.name
+        favoriteButton.setBackgroundImage(model.isFavorite ? starFillImage : starImage, for: .normal)
     }
 }
     

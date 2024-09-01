@@ -27,4 +27,12 @@ struct CatsPresenter {
     static var retryDialogTitle: String {
         "Retry"
     }
+    
+    static var allSegmentControl: String {
+        "Cats list"
+    }
+    
+    static var favoritesSegmentControl: String {
+        "Favorites"
+    }
 }

@@ -11,11 +11,8 @@ import Combine
 class CatsViewModel: ObservableObject {
     @Published var fetchedBreeds: BreedsResponse?
     @Published var errorMessage: String? = nil
-    private var allBreeds: BreedsResponse? {
-        willSet {
-            fetchedBreeds = newValue
-        }
-    }
+    private var allBreeds: BreedsResponse?
+    private var listType: CatsListType = .all
     private var cancellables = Set<AnyCancellable>()
     
     private let client: HTTPClient
@@ -37,9 +34,16 @@ class CatsViewModel: ObservableObject {
     }
     
     public func toggleFavorite(breed: CatBreed, isFavorite: Bool) {
-        // Apply favorite to given breed
+        // Apply favorite to displayed breeds
         if let index = fetchedBreeds?.firstIndex(where: { $0.id == breed.id }) {
             fetchedBreeds?[index].isFavorite = isFavorite
+            if listType == .favorites {
+                fetchedBreeds?.remove(at: index)
+            }
+        }
+        // Apply favorite to array with all breeds
+        if let index = allBreeds?.firstIndex(where: { $0.id == breed.id }) {
+            allBreeds?[index].isFavorite = isFavorite
         }
     }
     
@@ -49,6 +53,16 @@ class CatsViewModel: ObservableObject {
         } else {
             guard let breed = breedName else { return }
             fetchedBreeds = allBreeds?.filter { $0.name.lowercased().contains(breed.lowercased()) }
+        }
+    }
+    
+    public func toggleListType(for type: CatsListType) {
+        self.listType = type
+        switch type {
+        case .all:
+            fetchedBreeds = allBreeds
+        case .favorites:
+            fetchedBreeds = allBreeds?.filter { $0.isFavorite }
         }
     }
 }
@@ -72,6 +86,7 @@ extension CatsViewModel {
                 guard let self = self else { return }
                 self.errorMessage = nil
                 self.allBreeds = response
+                self.fetchedBreeds = response
             }
             .store(in: &cancellables)
     }

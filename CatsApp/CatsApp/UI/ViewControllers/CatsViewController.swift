@@ -20,6 +20,14 @@ public class CatsViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var filterControl: UISegmentedControl = {
+        let control = UISegmentedControl(items: [CatsPresenter.allSegmentControl, CatsPresenter.favoritesSegmentControl])
+        control.translatesAutoresizingMaskIntoConstraints = false
+        control.selectedSegmentIndex = 0
+        control.addTarget(self, action: #selector(filterListChanged), for: .valueChanged)
+        return control
+    }()
+    
     private var dataSource: UICollectionViewDiffableDataSource<Int, CatBreed>!
     
     private var cancellables = Set<AnyCancellable>()
@@ -68,15 +76,21 @@ public class CatsViewController: UIViewController {
         title = CatsPresenter.viewTitle
         view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
+        view.addSubview(filterControl)
         
         setupSearchController()
+        
+        filterControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        filterControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        filterControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        filterControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         // Set the delegate for the collection view
         collectionView.delegate = self
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: filterControl.topAnchor).isActive = true
     }
     
     private func setupSearchController() {
@@ -170,5 +184,15 @@ extension CatsViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedBreed = viewModel?.fetchedBreeds?[indexPath.row] else { return }
         viewModel?.selected(breed: selectedBreed)
+    }
+}
+
+// MARK: - Filter List Control
+extension CatsViewController {
+    
+    @objc private func filterListChanged() {
+        let type = CatsListType(rawValue: filterControl.selectedSegmentIndex) ?? .all
+        viewModel?.toggleListType(for: type)
+        searchController.searchBar.isHidden = type == .favorites
     }
 }
