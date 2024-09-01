@@ -10,7 +10,6 @@
 		8C9A70812C84A357007D7D94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70802C84A357007D7D94 /* AppDelegate.swift */; };
 		8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70822C84A357007D7D94 /* SceneDelegate.swift */; };
 		8C9A70852C84A357007D7D94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70842C84A357007D7D94 /* ViewController.swift */; };
-		8C9A70882C84A357007D7D94 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8C9A70872C84A357007D7D94 /* Base */; };
 		8C9A708B2C84A357007D7D94 /* CatsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70892C84A357007D7D94 /* CatsApp.xcdatamodeld */; };
 		8C9A708D2C84A358007D7D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9A708C2C84A358007D7D94 /* Assets.xcassets */; };
 		8C9A70902C84A358007D7D94 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8C9A708F2C84A358007D7D94 /* Base */; };
@@ -41,7 +40,6 @@
 		8C9A70802C84A357007D7D94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C9A70822C84A357007D7D94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C9A70842C84A357007D7D94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C9A70872C84A357007D7D94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C9A708A2C84A357007D7D94 /* CatsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatsApp.xcdatamodel; sourceTree = "<group>"; };
 		8C9A708C2C84A358007D7D94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C9A708F2C84A358007D7D94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				8C9A70802C84A357007D7D94 /* AppDelegate.swift */,
 				8C9A70822C84A357007D7D94 /* SceneDelegate.swift */,
 				8C9A70842C84A357007D7D94 /* ViewController.swift */,
-				8C9A70862C84A357007D7D94 /* Main.storyboard */,
 				8C9A708C2C84A358007D7D94 /* Assets.xcassets */,
 				8C9A708E2C84A358007D7D94 /* LaunchScreen.storyboard */,
 				8C9A70912C84A358007D7D94 /* Info.plist */,
@@ -236,7 +233,6 @@
 			files = (
 				8C9A708D2C84A358007D7D94 /* Assets.xcassets in Resources */,
 				8C9A70902C84A358007D7D94 /* Base in Resources */,
-				8C9A70882C84A357007D7D94 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8C9A70862C84A357007D7D94 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C9A70872C84A357007D7D94 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8C9A708E2C84A358007D7D94 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -451,7 +439,6 @@
 				INFOPLIST_FILE = CatsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,7 +469,6 @@
 				INFOPLIST_FILE = CatsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
