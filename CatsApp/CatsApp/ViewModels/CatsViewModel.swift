@@ -27,14 +27,6 @@ class CatsViewModel: ObservableObject {
         self.breedsLoader = breedsLoader
         self.selection = selection
     }
-    
-    public var title: String {
-        "Cats App"
-    }
-    
-    public var searchPlaceholder: String {
-        "Search"
-    }
 
     public func loadData() {
         fetchBreeds()

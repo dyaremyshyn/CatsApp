@@ -47,7 +47,7 @@ public class CatsViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] errorMessage in
                 guard let self, let message = errorMessage else { return }
-                print(message)
+                self.showError(message: message)
             }
             .store(in: &cancellables)
     }
@@ -65,7 +65,7 @@ public class CatsViewController: UIViewController {
     }
 
     private func setupView() {
-        title = viewModel?.title
+        title = CatsPresenter.viewTitle
         view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         
@@ -85,7 +85,7 @@ public class CatsViewController: UIViewController {
         // Don't obscure the background when the user is searching
         searchController.obscuresBackgroundDuringPresentation = false
         // Customize the search bar placeholder
-        searchController.searchBar.placeholder = viewModel?.searchPlaceholder
+        searchController.searchBar.placeholder = CatsPresenter.searchPlaceholder
         // Ensure the search bar doesn't remain on the screen if the user navigates to another view controller while the UISearchController is active
         definesPresentationContext = true
     }
@@ -146,5 +146,18 @@ extension CatsViewController : UISearchResultsUpdating {
     
     public func updateSearchResults(for searchController: UISearchController) {
         viewModel?.search(for: searchController.searchBar.text)
+    }
+}
+
+// MARK: - Error Handling
+extension CatsViewController {
+    
+    private func showError(message: String) {
+        self.showErrorDialog(
+            title: CatsPresenter.errorDialogTitle,
+            message: message,
+            cancelTitle: CatsPresenter.cancelDialogTitle,
+            actionTitle: CatsPresenter.retryDialogTitle,
+            retryCompletion: viewModel?.loadData)
     }
 }
