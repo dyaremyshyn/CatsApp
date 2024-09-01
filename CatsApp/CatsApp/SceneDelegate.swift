@@ -11,12 +11,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private lazy var navigationController = UINavigationController(
+        rootViewController: CatsComposer.catsComposedWith(
+            client: httpClient,
+            breedsLoader: BreedsNetworkService(),
+            selection: navigateToBreedDetails
+        )
+    )
+    
+    private lazy var httpClient: HTTPClient = {
+        URLSessionHTTPClient(session: URLSession(configuration: .default))
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    private func navigateToBreedDetails(breed: CatBreed) {
+        navigationController.pushViewController(UIViewController(), animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

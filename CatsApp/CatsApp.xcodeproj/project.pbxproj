@@ -26,6 +26,7 @@
 		8C9A70CB2C84BBE6007D7D94 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CA2C84BBE6007D7D94 /* URLSessionHTTPClient.swift */; };
 		8C9A70CD2C84BC7D007D7D94 /* BreedsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CC2C84BC7D007D7D94 /* BreedsNetworkService.swift */; };
 		8C9A70CF2C84BF3F007D7D94 /* CatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */; };
+		8C9A70D22C84C150007D7D94 /* CatsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70D12C84C150007D7D94 /* CatsComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		8C9A70CA2C84BBE6007D7D94 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		8C9A70CC2C84BC7D007D7D94 /* BreedsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsNetworkService.swift; sourceTree = "<group>"; };
 		8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModel.swift; sourceTree = "<group>"; };
+		8C9A70D12C84C150007D7D94 /* CatsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		8C9A70B42C84A6B5007D7D94 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8C9A70D02C84C13B007D7D94 /* Composers */,
 				8C9A70B82C84A6F2007D7D94 /* ViewControllers */,
 				8C9A708E2C84A358007D7D94 /* LaunchScreen.storyboard */,
 			);
@@ -227,6 +230,14 @@
 				8C9A70BC2C84A770007D7D94 /* NetworkHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8C9A70D02C84C13B007D7D94 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70D12C84C150007D7D94 /* CatsComposer.swift */,
+			);
+			path = Composers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +384,7 @@
 				8C9A70BF2C84B024007D7D94 /* Weight.swift in Sources */,
 				8C9A70C72C84B80D007D7D94 /* BreedsDataLoader.swift in Sources */,
 				8C9A70CB2C84BBE6007D7D94 /* URLSessionHTTPClient.swift in Sources */,
+				8C9A70D22C84C150007D7D94 /* CatsComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
