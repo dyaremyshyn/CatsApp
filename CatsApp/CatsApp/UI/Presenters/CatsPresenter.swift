@@ -8,8 +8,12 @@
 import Foundation
 
 struct CatsPresenter {
-    static var viewTitle: String {
+    static var allCatsViewTitle: String {
         "Cats App"
+    }
+    
+    static var favoritesViewTitle: String {
+        "Favorites"
     }
   
     static var searchPlaceholder: String {

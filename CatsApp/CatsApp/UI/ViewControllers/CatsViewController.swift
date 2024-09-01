@@ -73,7 +73,7 @@ public class CatsViewController: UIViewController {
     }
 
     private func setupView() {
-        title = CatsPresenter.viewTitle
+        title = CatsPresenter.allCatsViewTitle
         view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         view.addSubview(filterControl)
@@ -192,7 +192,11 @@ extension CatsViewController {
     
     @objc private func filterListChanged() {
         let type = CatsListType(rawValue: filterControl.selectedSegmentIndex) ?? .all
+        // Toggle the control to display all cats or only favorite ones
         viewModel?.toggleListType(for: type)
+        // Hidding the search bar if the favorites was selected
         searchController.searchBar.isHidden = type == .favorites
+        // Changing the view title based on the selected list type
+        title = type == .all ? CatsPresenter.allCatsViewTitle : CatsPresenter.favoritesViewTitle
     }
 }
