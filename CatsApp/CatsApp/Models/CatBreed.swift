@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CatBreed: Decodable {
+public struct CatBreed: Decodable, Hashable {
     let weight: Weight?
     let id, name: String
     let cfaURL: String?
@@ -58,5 +58,13 @@ public struct CatBreed: Decodable {
         case hypoallergenic
         case referenceImageID = "reference_image_id"
         case image
+    }
+    
+    public static func == (lhs: CatBreed, rhs: CatBreed) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

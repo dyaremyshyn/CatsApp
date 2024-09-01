@@ -27,6 +27,8 @@
 		8C9A70CD2C84BC7D007D7D94 /* BreedsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CC2C84BC7D007D7D94 /* BreedsNetworkService.swift */; };
 		8C9A70CF2C84BF3F007D7D94 /* CatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */; };
 		8C9A70D22C84C150007D7D94 /* CatsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70D12C84C150007D7D94 /* CatsComposer.swift */; };
+		8C9A70D62C84CCDA007D7D94 /* CatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70D52C84CCDA007D7D94 /* CatViewCell.swift */; };
+		8C9A70D92C84CE02007D7D94 /* FavoriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70D82C84CE02007D7D94 /* FavoriteDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		8C9A70CC2C84BC7D007D7D94 /* BreedsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsNetworkService.swift; sourceTree = "<group>"; };
 		8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModel.swift; sourceTree = "<group>"; };
 		8C9A70D12C84C150007D7D94 /* CatsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsComposer.swift; sourceTree = "<group>"; };
+		8C9A70D52C84CCDA007D7D94 /* CatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewCell.swift; sourceTree = "<group>"; };
+		8C9A70D82C84CE02007D7D94 /* FavoriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 		8C9A70B42C84A6B5007D7D94 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8C9A70D72C84CDA8007D7D94 /* Protocols */,
+				8C9A70D32C84CC8B007D7D94 /* Views */,
 				8C9A70D02C84C13B007D7D94 /* Composers */,
 				8C9A70B82C84A6F2007D7D94 /* ViewControllers */,
 				8C9A708E2C84A358007D7D94 /* LaunchScreen.storyboard */,
@@ -238,6 +244,30 @@
 				8C9A70D12C84C150007D7D94 /* CatsComposer.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		8C9A70D32C84CC8B007D7D94 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70D42C84CC9F007D7D94 /* ViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C9A70D42C84CC9F007D7D94 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70D52C84CCDA007D7D94 /* CatViewCell.swift */,
+			);
+			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		8C9A70D72C84CDA8007D7D94 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8C9A70D82C84CE02007D7D94 /* FavoriteDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,12 +409,14 @@
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
 				8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */,
 				8C9A70C92C84BBBE007D7D94 /* HTTPClient.swift in Sources */,
+				8C9A70D92C84CE02007D7D94 /* FavoriteDelegate.swift in Sources */,
 				8C9A70812C84A357007D7D94 /* AppDelegate.swift in Sources */,
 				8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */,
 				8C9A70BF2C84B024007D7D94 /* Weight.swift in Sources */,
 				8C9A70C72C84B80D007D7D94 /* BreedsDataLoader.swift in Sources */,
 				8C9A70CB2C84BBE6007D7D94 /* URLSessionHTTPClient.swift in Sources */,
 				8C9A70D22C84C150007D7D94 /* CatsComposer.swift in Sources */,
+				8C9A70D62C84CCDA007D7D94 /* CatViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +596,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,6 +627,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
