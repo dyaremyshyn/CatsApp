@@ -26,6 +26,7 @@ public struct CatBreed: Decodable, Hashable {
     let hypoallergenic: Int?
     let referenceImageID: String?
     let image: CatImage?
+    var isFavorite: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case weight, id, name

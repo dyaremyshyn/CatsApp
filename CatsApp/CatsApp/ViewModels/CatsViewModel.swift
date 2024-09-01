@@ -34,6 +34,13 @@ class CatsViewModel: ObservableObject {
     public func selected(breed: CatBreed) {
         selection(breed)
     }
+    
+    public func toggleFavorite(breed: CatBreed, isFavorite: Bool) {
+        // Apply favorite to given breed
+        if let index = fetchedBreeds?.firstIndex(where: { $0.id == breed.id }) {
+            fetchedBreeds?[index].isFavorite = isFavorite
+        }
+    }
 }
 
 // MARK: - Data Loader

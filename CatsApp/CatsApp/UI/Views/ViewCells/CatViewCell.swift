@@ -98,8 +98,8 @@ class CatViewCell: UICollectionViewCell {
 extension CatViewCell {
     @objc private func favoriteButtonTapped() {
         // Visual part
-        let isFavorite = favoriteButton.currentBackgroundImage == starFillImage
-        favoriteButton.setBackgroundImage(isFavorite ? starImage : starFillImage, for: .normal)
+        let isFavorite = favoriteButton.currentBackgroundImage == starImage
+        favoriteButton.setBackgroundImage(isFavorite ? starFillImage : starImage, for: .normal)
         
         // Toggle favorite and send it back to VC to sort
         delegate?.toggleFavorite(breed: model, isFavorite: isFavorite)
