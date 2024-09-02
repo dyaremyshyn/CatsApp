@@ -12,21 +12,27 @@ class CatsViewModel: ObservableObject {
     @Published var fetchedBreeds: BreedsResponse?
     @Published var errorMessage: String? = nil
     private var allBreeds: BreedsResponse?
-    private var listType: CatsListType = .all
     private var cancellables = Set<AnyCancellable>()
     
     private let client: HTTPClient
     private let breedsLoader: BreedsDataLoader
+    private let persistenceLoader: PersistenceLoader
     private let selection: (CatBreed) -> Void
 
-    init(client: HTTPClient, breedsLoader: BreedsDataLoader, selection: @escaping (CatBreed) -> Void) {
+    init(client: HTTPClient, breedsLoader: BreedsDataLoader, persistenceLoader: PersistenceLoader, selection: @escaping (CatBreed) -> Void) {
         self.client = client
         self.breedsLoader = breedsLoader
+        self.persistenceLoader = persistenceLoader
         self.selection = selection
     }
 
     public func loadData() {
-        fetchBreeds()
+        let persistedBreeds = persistenceLoader.getData()
+        guard persistedBreeds.count > 0 else {
+            fetchBreeds()
+            return
+        }
+        fetchedBreeds = persistedBreeds
     }
     
     public func selected(breed: CatBreed) {
@@ -36,13 +42,14 @@ class CatsViewModel: ObservableObject {
     public func toggleFavorite(breed: CatBreed, isFavorite: Bool) {
         // Apply favorite to displayed breeds
         if let index = fetchedBreeds?.firstIndex(where: { $0.id == breed.id }) {
+            // Update breed in the array
             fetchedBreeds?[index].isFavorite = isFavorite
-            if listType == .favorites {
-                fetchedBreeds?.remove(at: index)
-            }
+            // Update breed in the DB
+            persistenceLoader.saveData(catBreed: fetchedBreeds?[index])
         }
         // Apply favorite to array with all breeds
         if let index = allBreeds?.firstIndex(where: { $0.id == breed.id }) {
+            // Update breed in the array
             allBreeds?[index].isFavorite = isFavorite
         }
     }
@@ -53,16 +60,6 @@ class CatsViewModel: ObservableObject {
         } else {
             guard let breed = breedName else { return }
             fetchedBreeds = allBreeds?.filter { $0.name.lowercased().contains(breed.lowercased()) }
-        }
-    }
-    
-    public func toggleListType(for type: CatsListType) {
-        self.listType = type
-        switch type {
-        case .all:
-            fetchedBreeds = allBreeds
-        case .favorites:
-            fetchedBreeds = allBreeds?.filter { $0.isFavorite }
         }
     }
 }
@@ -87,7 +84,15 @@ extension CatsViewModel {
                 self.errorMessage = nil
                 self.allBreeds = response
                 self.fetchedBreeds = response
+                saveBreedToPersistence()
             }
             .store(in: &cancellables)
+    }
+    
+    private func saveBreedToPersistence() {
+        guard let allBreeds = allBreeds, allBreeds.count > 0 else { return }
+        allBreeds.forEach {
+            persistenceLoader.saveData(catBreed: $0)
+        }
     }
 }

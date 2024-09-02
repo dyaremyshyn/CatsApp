@@ -14,9 +14,10 @@ public final class CatsComposer {
     public static func catsComposedWith(
         client: HTTPClient,
         breedsLoader: BreedsDataLoader,
+        persistenceLoader: PersistenceLoader,
         selection: @escaping (CatBreed) -> Void = { _  in }
     ) -> CatsViewController {
-        let viewModel = CatsViewModel(client: client, breedsLoader: breedsLoader, selection: selection)
+        let viewModel = CatsViewModel(client: client, breedsLoader: breedsLoader, persistenceLoader: persistenceLoader, selection: selection)
         let viewController = CatsViewController.makeWith(viewModel: viewModel)
         return viewController
     }

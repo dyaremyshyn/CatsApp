@@ -14,7 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var navigationController = UINavigationController(
         rootViewController: CatsComposer.catsComposedWith(
             client: httpClient,
-            breedsLoader: BreedsNetworkService(),
+            breedsLoader: BreedsNetworkService(), 
+            persistenceLoader: PersistenceService(),
             selection: navigateToBreedDetails
         )
     )
