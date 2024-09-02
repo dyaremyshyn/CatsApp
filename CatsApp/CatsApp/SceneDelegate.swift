@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    private lazy var navigationController = UINavigationController(
+    private lazy var catsController = UINavigationController(
         rootViewController: CatsComposer.catsComposedWith(
             client: httpClient,
             breedsLoader: BreedsNetworkService(), 
@@ -20,6 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
     )
     
+    private lazy var favoriteController = UINavigationController(
+        rootViewController: FavoriteComposer.favoriteComposedWith(
+            persistenceLoader: PersistenceService(),
+            selection: navigateToBreedDetails
+        )
+    )
+    
+    private lazy var tabBarController = UITabBarController()
+        
     private lazy var httpClient: HTTPClient = {
         URLSessionHTTPClient(session: URLSession(configuration: .default))
     }()
@@ -27,12 +36,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = navigationController
+        configureTabBar()
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
     
+    private func configureTabBar() {
+        catsController.tabBarItem = UITabBarItem(title: "Cats list", image: UIImage(systemName: "cat"), tag: 0)
+        favoriteController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "star"), tag: 1)
+        tabBarController.viewControllers = [catsController, favoriteController]
+    }
+    
     private func navigateToBreedDetails(breed: CatBreed) {
-        navigationController.pushViewController(UIViewController(), animated: true)
+        catsController.pushViewController(UIViewController(), animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

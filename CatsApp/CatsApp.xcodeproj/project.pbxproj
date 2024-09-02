@@ -31,6 +31,9 @@
 		8C9A70D92C84CE02007D7D94 /* FavoriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70D82C84CE02007D7D94 /* FavoriteDelegate.swift */; };
 		8C9A70DC2C84EC08007D7D94 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70DB2C84EC08007D7D94 /* UIViewController+ShowAlert.swift */; };
 		8C9A70DF2C84ED5C007D7D94 /* CatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70DE2C84ED5C007D7D94 /* CatsPresenter.swift */; };
+		8C9A70E32C852DFC007D7D94 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70E22C852DFC007D7D94 /* FavoritesViewController.swift */; };
+		8C9A70E52C852FF5007D7D94 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70E42C852FF5007D7D94 /* FavoritesViewModel.swift */; };
+		8C9A70E72C8531F5007D7D94 /* FavoriteComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70E62C8531F5007D7D94 /* FavoriteComposer.swift */; };
 		8C9A70EB2C864D58007D7D94 /* PersistenceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EA2C864D58007D7D94 /* PersistenceLoader.swift */; };
 		8C9A70ED2C864DEA007D7D94 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EC2C864DEA007D7D94 /* PersistenceService.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,9 @@
 		8C9A70D82C84CE02007D7D94 /* FavoriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDelegate.swift; sourceTree = "<group>"; };
 		8C9A70DB2C84EC08007D7D94 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		8C9A70DE2C84ED5C007D7D94 /* CatsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsPresenter.swift; sourceTree = "<group>"; };
+		8C9A70E22C852DFC007D7D94 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8C9A70E42C852FF5007D7D94 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		8C9A70E62C8531F5007D7D94 /* FavoriteComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteComposer.swift; sourceTree = "<group>"; };
 		8C9A70EA2C864D58007D7D94 /* PersistenceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLoader.swift; sourceTree = "<group>"; };
 		8C9A70EC2C864DEA007D7D94 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */,
+				8C9A70E42C852FF5007D7D94 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9A70842C84A357007D7D94 /* CatsViewController.swift */,
+				8C9A70E22C852DFC007D7D94 /* FavoritesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9A70D12C84C150007D7D94 /* CatsComposer.swift */,
+				8C9A70E62C8531F5007D7D94 /* FavoriteComposer.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -449,6 +458,7 @@
 				8C9A70C12C84B043007D7D94 /* CatBreed.swift in Sources */,
 				8C9A70CD2C84BC7D007D7D94 /* BreedsNetworkService.swift in Sources */,
 				8C9A70CF2C84BF3F007D7D94 /* CatsViewModel.swift in Sources */,
+				8C9A70E32C852DFC007D7D94 /* FavoritesViewController.swift in Sources */,
 				8C9A70852C84A357007D7D94 /* CatsViewController.swift in Sources */,
 				8C9A70C52C84B1E9007D7D94 /* BreedsResponse.swift in Sources */,
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
@@ -460,9 +470,11 @@
 				8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */,
 				8C9A70DF2C84ED5C007D7D94 /* CatsPresenter.swift in Sources */,
 				8C9A70EB2C864D58007D7D94 /* PersistenceLoader.swift in Sources */,
+				8C9A70E52C852FF5007D7D94 /* FavoritesViewModel.swift in Sources */,
 				8C9A70BF2C84B024007D7D94 /* Weight.swift in Sources */,
 				8C9A70C72C84B80D007D7D94 /* BreedsDataLoader.swift in Sources */,
 				8C9A70CB2C84BBE6007D7D94 /* URLSessionHTTPClient.swift in Sources */,
+				8C9A70E72C8531F5007D7D94 /* FavoriteComposer.swift in Sources */,
 				8C9A70D22C84C150007D7D94 /* CatsComposer.swift in Sources */,
 				8C9A70D62C84CCDA007D7D94 /* CatViewCell.swift in Sources */,
 			);
