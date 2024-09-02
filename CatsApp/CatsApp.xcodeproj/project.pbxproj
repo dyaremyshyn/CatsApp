@@ -36,6 +36,7 @@
 		8C9A70E72C8531F5007D7D94 /* FavoriteComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70E62C8531F5007D7D94 /* FavoriteComposer.swift */; };
 		8C9A70EB2C864D58007D7D94 /* PersistenceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EA2C864D58007D7D94 /* PersistenceLoader.swift */; };
 		8C9A70ED2C864DEA007D7D94 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EC2C864DEA007D7D94 /* PersistenceService.swift */; };
+		8C9A70EF2C865FFA007D7D94 /* LifespanViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EE2C865FFA007D7D94 /* LifespanViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		8C9A70E62C8531F5007D7D94 /* FavoriteComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteComposer.swift; sourceTree = "<group>"; };
 		8C9A70EA2C864D58007D7D94 /* PersistenceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLoader.swift; sourceTree = "<group>"; };
 		8C9A70EC2C864DEA007D7D94 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		8C9A70EE2C865FFA007D7D94 /* LifespanViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifespanViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9A70D52C84CCDA007D7D94 /* CatViewCell.swift */,
+				8C9A70EE2C865FFA007D7D94 /* LifespanViewCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				8C9A70CF2C84BF3F007D7D94 /* CatsViewModel.swift in Sources */,
 				8C9A70E32C852DFC007D7D94 /* FavoritesViewController.swift in Sources */,
 				8C9A70852C84A357007D7D94 /* CatsViewController.swift in Sources */,
+				8C9A70EF2C865FFA007D7D94 /* LifespanViewCell.swift in Sources */,
 				8C9A70C52C84B1E9007D7D94 /* BreedsResponse.swift in Sources */,
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
 				8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */,

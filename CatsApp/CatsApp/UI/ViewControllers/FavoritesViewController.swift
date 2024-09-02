@@ -15,6 +15,7 @@ public class FavoritesViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.register(CatViewCell.self, forCellWithReuseIdentifier: CatViewCell.reuseIdentifier)
+        collectionView.register(LifespanViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LifespanViewCell.reuseIdentifier)
         return collectionView
     }()
     
@@ -44,6 +45,14 @@ public class FavoritesViewController: UIViewController {
                 self.applySnapshot(breeds: breeds)
             }
             .store(in: &cancellables)
+        
+        viewModel?.$averageLifeSpan
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] lifespan in
+                guard let self, let lifespan = lifespan else { return }
+                self.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
     }
     
     private func setupDataSource() {
@@ -53,6 +62,13 @@ public class FavoritesViewController: UIViewController {
             cell.configure(model: model)
             cell.delegate = self
             return cell
+        }
+        
+        dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) -> UICollectionReusableView? in
+            guard let self = self else { return nil }
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LifespanViewCell.reuseIdentifier, for: indexPath) as! LifespanViewCell
+            header.configure(with: self.viewModel?.averageLifeSpan)
+            return header
         }
         
         collectionView.dataSource = dataSource
@@ -99,6 +115,20 @@ public class FavoritesViewController: UIViewController {
             
             // Space between each row
             section.interGroupSpacing = 10
+                    
+            let headerSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .absolute(60)
+            )
+            
+            // Define the header section that contains the average lifespan information
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .top
+            )
+            
+            section.boundarySupplementaryItems = [sectionHeader]
             
             return section
         }
