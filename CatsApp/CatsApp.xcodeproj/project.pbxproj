@@ -37,6 +37,9 @@
 		8C9A70EB2C864D58007D7D94 /* PersistenceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EA2C864D58007D7D94 /* PersistenceLoader.swift */; };
 		8C9A70ED2C864DEA007D7D94 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EC2C864DEA007D7D94 /* PersistenceService.swift */; };
 		8C9A70EF2C865FFA007D7D94 /* LifespanViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A70EE2C865FFA007D7D94 /* LifespanViewCell.swift */; };
+		8CDEEFB52C874D0600E0C6FE /* BreedDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFB42C874D0600E0C6FE /* BreedDetailsView.swift */; };
+		8CDEEFB72C874D2600E0C6FE /* BreedDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFB62C874D2600E0C6FE /* BreedDetailsViewModel.swift */; };
+		8CDEEFBA2C87B4C400E0C6FE /* BreedDetailsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFB92C87B4C400E0C6FE /* BreedDetailsComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		8C9A70EA2C864D58007D7D94 /* PersistenceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLoader.swift; sourceTree = "<group>"; };
 		8C9A70EC2C864DEA007D7D94 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		8C9A70EE2C865FFA007D7D94 /* LifespanViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifespanViewCell.swift; sourceTree = "<group>"; };
+		8CDEEFB42C874D0600E0C6FE /* BreedDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsView.swift; sourceTree = "<group>"; };
+		8CDEEFB62C874D2600E0C6FE /* BreedDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsViewModel.swift; sourceTree = "<group>"; };
+		8CDEEFB92C87B4C400E0C6FE /* BreedDetailsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,7 @@
 			children = (
 				8C9A70CE2C84BF3F007D7D94 /* CatsViewModel.swift */,
 				8C9A70E42C852FF5007D7D94 /* FavoritesViewModel.swift */,
+				8CDEEFB62C874D2600E0C6FE /* BreedDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			children = (
 				8C9A70D12C84C150007D7D94 /* CatsComposer.swift */,
 				8C9A70E62C8531F5007D7D94 /* FavoriteComposer.swift */,
+				8CDEEFB92C87B4C400E0C6FE /* BreedDetailsComposer.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 			children = (
 				8C9A70DA2C84EBFF007D7D94 /* Helpers */,
 				8C9A70D42C84CC9F007D7D94 /* ViewCells */,
+				8CDEEFB42C874D0600E0C6FE /* BreedDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -464,13 +473,16 @@
 				8C9A70E32C852DFC007D7D94 /* FavoritesViewController.swift in Sources */,
 				8C9A70852C84A357007D7D94 /* CatsViewController.swift in Sources */,
 				8C9A70EF2C865FFA007D7D94 /* LifespanViewCell.swift in Sources */,
+				8CDEEFB72C874D2600E0C6FE /* BreedDetailsViewModel.swift in Sources */,
 				8C9A70C52C84B1E9007D7D94 /* BreedsResponse.swift in Sources */,
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
+				8CDEEFB52C874D0600E0C6FE /* BreedDetailsView.swift in Sources */,
 				8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */,
 				8C9A70DC2C84EC08007D7D94 /* UIViewController+ShowAlert.swift in Sources */,
 				8C9A70C92C84BBBE007D7D94 /* HTTPClient.swift in Sources */,
 				8C9A70D92C84CE02007D7D94 /* FavoriteDelegate.swift in Sources */,
 				8C9A70812C84A357007D7D94 /* AppDelegate.swift in Sources */,
+				8CDEEFBA2C87B4C400E0C6FE /* BreedDetailsComposer.swift in Sources */,
 				8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */,
 				8C9A70DF2C84ED5C007D7D94 /* CatsPresenter.swift in Sources */,
 				8C9A70EB2C864D58007D7D94 /* PersistenceLoader.swift in Sources */,

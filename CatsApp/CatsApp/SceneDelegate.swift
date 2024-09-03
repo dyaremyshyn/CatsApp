@@ -48,7 +48,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func navigateToBreedDetails(breed: CatBreed) {
-        catsController.pushViewController(UIViewController(), animated: true)
+        let hostingController =  BreedDetailsComposer.detailsComposedWith(breed: breed, persistenceLoader: PersistenceService())
+        if let selectedViewController = tabBarController.selectedViewController as? UINavigationController {
+            selectedViewController.pushViewController(hostingController, animated: true)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
