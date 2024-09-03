@@ -104,6 +104,6 @@ extension CatViewCell {
         favoriteButton.setBackgroundImage(isFavorite ? starFillImage : starImage, for: .normal)
         
         // Toggle favorite and send it back to VC to sort
-        delegate?.toggleFavorite(breed: model, isFavorite: isFavorite)
+        delegate?.toggleFavorite(breed: model)
     }
 }

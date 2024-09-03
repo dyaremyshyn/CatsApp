@@ -33,24 +33,25 @@ class CatsViewModel: ObservableObject {
             return
         }
         fetchedBreeds = persistedBreeds
+        allBreeds = persistedBreeds
     }
     
     public func selected(breed: CatBreed) {
         selection(breed)
     }
     
-    public func toggleFavorite(breed: CatBreed, isFavorite: Bool) {
+    public func toggleFavorite(breed: CatBreed) {
         // Apply favorite to displayed breeds
         if let index = fetchedBreeds?.firstIndex(where: { $0.id == breed.id }) {
             // Update breed in the array
-            fetchedBreeds?[index].isFavorite = isFavorite
+            fetchedBreeds?[index].isFavorite.toggle()
             // Update breed in the DB
             persistenceLoader.saveData(catBreed: fetchedBreeds?[index])
         }
         // Apply favorite to array with all breeds
         if let index = allBreeds?.firstIndex(where: { $0.id == breed.id }) {
             // Update breed in the array
-            allBreeds?[index].isFavorite = isFavorite
+            allBreeds?[index].isFavorite.toggle()
         }
     }
     

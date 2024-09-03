@@ -31,11 +31,11 @@ class FavoritesViewModel: ObservableObject {
         selection(breed)
     }
     
-    public func toggleFavorite(breed: CatBreed, isFavorite: Bool) {
+    public func toggleFavorite(breed: CatBreed) {
         // Apply favorite to displayed breeds
         if let index = favoriteBreeds?.firstIndex(where: { $0.id == breed.id }) {
             // Update breed in the array
-            favoriteBreeds?[index].isFavorite = isFavorite
+            favoriteBreeds?[index].isFavorite.toggle()
             // Update breed in the DB
             persistenceLoader.saveData(catBreed: favoriteBreeds?[index])
             // Remove from the array, cause its only for favorites

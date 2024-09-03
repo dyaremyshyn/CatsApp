@@ -143,8 +143,8 @@ public class CatsViewController: UIViewController {
 // MARK: - Favorite Delegate
 extension CatsViewController: FavoriteDelegate {
     
-    func toggleFavorite(breed: CatBreed, isFavorite: Bool) {
-        viewModel?.toggleFavorite(breed: breed, isFavorite: isFavorite)
+    func toggleFavorite(breed: CatBreed) {
+        viewModel?.toggleFavorite(breed: breed)
     }
 }
 

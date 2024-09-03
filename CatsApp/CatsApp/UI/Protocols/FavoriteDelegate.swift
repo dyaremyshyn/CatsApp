@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FavoriteDelegate: AnyObject  {
-    func toggleFavorite(breed: CatBreed, isFavorite: Bool)
+    func toggleFavorite(breed: CatBreed)
 }
