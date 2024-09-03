@@ -48,8 +48,7 @@ public class FavoritesViewController: UIViewController {
         
         viewModel?.$averageLifeSpan
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] lifespan in
-                guard let self, let lifespan = lifespan else { return }
+            .sink { _ in
                 self.collectionView.reloadData()
             }
             .store(in: &cancellables)
