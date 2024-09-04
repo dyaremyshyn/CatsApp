@@ -12,7 +12,7 @@ public class CatsViewController: UIViewController {
 
     private let searchController = UISearchController(searchResultsController: nil)
 
-    private lazy var collectionView: UICollectionView = {
+    public lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createViewLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -70,7 +70,7 @@ public class CatsViewController: UIViewController {
     }
 
     private func setupView() {
-        title = CatsPresenter.allCatsViewTitle
+        title = viewModel?.title
         view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         
@@ -92,7 +92,7 @@ public class CatsViewController: UIViewController {
         // Don't obscure the background when the user is searching
         searchController.obscuresBackgroundDuringPresentation = false
         // Customize the search bar placeholder
-        searchController.searchBar.placeholder = CatsPresenter.searchPlaceholder
+        searchController.searchBar.placeholder = viewModel?.searchPlaceholder
         // Ensure the search bar doesn't remain on the screen if the user navigates to another view controller while the UISearchController is active
         definesPresentationContext = true
     }
@@ -161,10 +161,10 @@ extension CatsViewController {
     
     private func showError(message: String) {
         self.showErrorDialog(
-            title: CatsPresenter.errorDialogTitle,
+            title: viewModel?.errorDialogTitle,
             message: message,
-            cancelTitle: CatsPresenter.cancelDialogTitle,
-            actionTitle: CatsPresenter.retryDialogTitle,
+            cancelTitle: viewModel?.cancelDialogTitle,
+            actionTitle: viewModel?.retryDialogTitle,
             retryCompletion: viewModel?.loadData)
     }
 }

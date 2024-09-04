@@ -27,6 +27,26 @@ class CatsViewModel: ObservableObject {
         self.persistenceLoader = persistenceLoader
         self.selection = selection
     }
+    
+    public var title: String {
+        CatsPresenter.allCatsViewTitle
+    }
+    
+    public var searchPlaceholder: String {
+        CatsPresenter.searchPlaceholder
+    }
+    
+    public var errorDialogTitle: String {
+        CatsPresenter.errorDialogTitle
+    }
+    
+    public var cancelDialogTitle: String {
+        CatsPresenter.cancelDialogTitle
+    }
+    
+    public var retryDialogTitle: String {
+        CatsPresenter.retryDialogTitle
+    }
 
     public func loadData() {
         // Try to get data from DB

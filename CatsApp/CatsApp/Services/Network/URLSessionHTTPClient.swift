@@ -10,16 +10,16 @@ import Combine
 
 public final class URLSessionHTTPClient: HTTPClient {
 
-    private let session: URLSession
+    private let session: HTTPClientSession
     
-    public init(session: URLSession) {
+    public init(session: HTTPClientSession) {
         self.session = session
     }
     
     private struct UnexpectedValuesRepresentation: Error {}
     
     public func get(from url: URL) -> HTTPClient.Publisher {
-        return session.dataTaskPublisher(for: url)
+        return session.dataTaskPublisherForURL(url)
             .tryMap { data, response in
                 guard let httpResponse = response as? HTTPURLResponse else {
                     throw UnexpectedValuesRepresentation()
