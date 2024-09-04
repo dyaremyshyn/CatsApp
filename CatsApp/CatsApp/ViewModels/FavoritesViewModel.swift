@@ -68,6 +68,7 @@ class FavoritesViewModel: ObservableObject {
         let overallAverage = count > 0 ? totalSum / Double(count) : 0
         
         // Assigne the result to binded property
-        averageLifeSpan = "Average lifespan: \(overallAverage) years"
+        let averageFormatted = String(format: "%.1f", overallAverage)
+        averageLifeSpan = "Average lifespan: \(averageFormatted) years"
     }
 }

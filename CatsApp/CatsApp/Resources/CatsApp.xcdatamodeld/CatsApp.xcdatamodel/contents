@@ -4,6 +4,7 @@
         <attribute name="descriptionBreed" optional="YES" attributeType="String" valueTransformerName="WeightEntity"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lifeSpan" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>

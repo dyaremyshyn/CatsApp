@@ -63,6 +63,7 @@ struct PersistenceService: PersistenceLoader {
                 newEntry.lifeSpan = catBreed.lifeSpan
                 newEntry.image = catBreed.referenceImageID
                 newEntry.isFavorite = catBreed.isFavorite
+                newEntry.imageURL = catBreed.image?.url
                 
                 self.saveData()
                 
@@ -71,6 +72,7 @@ struct PersistenceService: PersistenceLoader {
             
             // Modify the properties of the fetched breed, in this case, we only will modify 'isFavorite'
             editCat.isFavorite = catBreed.isFavorite
+            editCat.imageURL = catBreed.image?.url
             
             self.saveData()
             

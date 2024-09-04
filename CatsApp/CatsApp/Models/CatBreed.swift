@@ -25,8 +25,9 @@ public struct CatBreed: Decodable, Hashable {
     let wikipediaURL: String?
     let hypoallergenic: Int?
     let referenceImageID: String?
-    let image: CatImage?
+    var image: CatImage?
     var isFavorite: Bool = false
+    var imageData: Data? = nil
 
     enum CodingKeys: String, CodingKey {
         case weight, id, name
@@ -69,7 +70,7 @@ public struct CatBreed: Decodable, Hashable {
         hasher.combine(id)
     }
     
-    init(weight: Weight? = nil, id: String, name: String, cfaURL: String? = nil, vetstreetURL: String? = nil, vcahospitalsURL: String? = nil, temperament: String?, origin: String?, countryCodes: String? = nil, countryCode: String? = nil, description: String?, lifeSpan: String?, indoor: Int? = nil, lap: Int? = nil, altNames: String? = nil, adaptability: Int? = nil, affectionLevel: Int? = nil, childFriendly: Int? = nil, dogFriendly: Int? = nil, energyLevel: Int? = nil, grooming: Int? = nil, healthIssues: Int? = nil, intelligence: Int? = nil, sheddingLevel: Int? = nil, socialNeeds: Int? = nil, strangerFriendly: Int? = nil, vocalisation: Int? = nil, experimental: Int? = nil, hairless: Int? = nil, natural: Int? = nil, rare: Int? = nil, rex: Int? = nil, suppressedTail: Int? = nil, shortLegs: Int? = nil, wikipediaURL: String? = nil, hypoallergenic: Int? = nil, referenceImageID: String?, image: CatImage? = nil, isFavorite: Bool) {
+    init(weight: Weight? = nil, id: String, name: String, cfaURL: String? = nil, vetstreetURL: String? = nil, vcahospitalsURL: String? = nil, temperament: String?, origin: String?, countryCodes: String? = nil, countryCode: String? = nil, description: String?, lifeSpan: String?, indoor: Int? = nil, lap: Int? = nil, altNames: String? = nil, adaptability: Int? = nil, affectionLevel: Int? = nil, childFriendly: Int? = nil, dogFriendly: Int? = nil, energyLevel: Int? = nil, grooming: Int? = nil, healthIssues: Int? = nil, intelligence: Int? = nil, sheddingLevel: Int? = nil, socialNeeds: Int? = nil, strangerFriendly: Int? = nil, vocalisation: Int? = nil, experimental: Int? = nil, hairless: Int? = nil, natural: Int? = nil, rare: Int? = nil, rex: Int? = nil, suppressedTail: Int? = nil, shortLegs: Int? = nil, wikipediaURL: String? = nil, hypoallergenic: Int? = nil, referenceImageID: String?, image: CatImage?, isFavorite: Bool) {
         self.weight = weight
         self.id = id
         self.name = name
@@ -120,6 +121,7 @@ public struct CatBreed: Decodable, Hashable {
             description: cat.descriptionBreed,
             lifeSpan: cat.lifeSpan,
             referenceImageID: cat.image,
+            image: CatImage(id: cat.image, url: cat.imageURL),
             isFavorite: cat.isFavorite
         )
     }

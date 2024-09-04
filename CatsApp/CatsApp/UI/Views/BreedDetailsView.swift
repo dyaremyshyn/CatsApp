@@ -28,6 +28,12 @@ public struct BreedDetailsView: View {
                         }
                         .padding([.leading, .trailing], 16)
                     }
+                    else {
+                        Image(systemName: "cat")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                    }
                 })
                 VStack(alignment:.leading, spacing: 10) {
                     Text(viewModel.origin)
@@ -61,5 +67,5 @@ public struct BreedDetailsView: View {
 }
 
 #Preview {
-    BreedDetailsView(viewModel: BreedDetailsViewModel(breed: CatBreed(id: "", name: "Bolinha", temperament: "Moderate", origin: "Street", description: "Meaow", lifeSpan: "10-12", referenceImageID: "0XYvRd7oD", isFavorite: false), persistenceLoader: PersistenceService()))
+    BreedDetailsView(viewModel: BreedDetailsViewModel(breed: CatBreed(id: "", name: "Bolinha", temperament: "Moderate", origin: "Street", description: "Meaow", lifeSpan: "10-12", referenceImageID: "0XYvRd7oD", image: CatImage(id: "0XYvRd7oD", url: ""), isFavorite: false), persistenceLoader: PersistenceService()))
 }

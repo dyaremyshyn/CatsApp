@@ -40,6 +40,9 @@
 		8CDEEFB52C874D0600E0C6FE /* BreedDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFB42C874D0600E0C6FE /* BreedDetailsView.swift */; };
 		8CDEEFB72C874D2600E0C6FE /* BreedDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFB62C874D2600E0C6FE /* BreedDetailsViewModel.swift */; };
 		8CDEEFBA2C87B4C400E0C6FE /* BreedDetailsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFB92C87B4C400E0C6FE /* BreedDetailsComposer.swift */; };
+		8CDEEFBE2C8872EF00E0C6FE /* BreedImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFBD2C8872EF00E0C6FE /* BreedImageNetworkService.swift */; };
+		8CDEEFC02C88730B00E0C6FE /* BreedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFBF2C88730B00E0C6FE /* BreedImageDataLoader.swift */; };
+		8CDEEFC22C88A3E800E0C6FE /* UIImageView+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEEFC12C88A3E800E0C6FE /* UIImageView+LoadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		8CDEEFB42C874D0600E0C6FE /* BreedDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsView.swift; sourceTree = "<group>"; };
 		8CDEEFB62C874D2600E0C6FE /* BreedDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsViewModel.swift; sourceTree = "<group>"; };
 		8CDEEFB92C87B4C400E0C6FE /* BreedDetailsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsComposer.swift; sourceTree = "<group>"; };
+		8CDEEFBD2C8872EF00E0C6FE /* BreedImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageNetworkService.swift; sourceTree = "<group>"; };
+		8CDEEFBF2C88730B00E0C6FE /* BreedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageDataLoader.swift; sourceTree = "<group>"; };
+		8CDEEFC12C88A3E800E0C6FE /* UIImageView+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,7 @@
 				8C9A70BA2C84A751007D7D94 /* Protocols */,
 				8C9A70CA2C84BBE6007D7D94 /* URLSessionHTTPClient.swift */,
 				8C9A70CC2C84BC7D007D7D94 /* BreedsNetworkService.swift */,
+				8CDEEFBD2C8872EF00E0C6FE /* BreedImageNetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 			children = (
 				8C9A70C62C84B80D007D7D94 /* BreedsDataLoader.swift */,
 				8C9A70C82C84BBBE007D7D94 /* HTTPClient.swift */,
+				8CDEEFBF2C88730B00E0C6FE /* BreedImageDataLoader.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -279,19 +287,19 @@
 			isa = PBXGroup;
 			children = (
 				8C9A70DA2C84EBFF007D7D94 /* Helpers */,
-				8C9A70D42C84CC9F007D7D94 /* ViewCells */,
+				8C9A70D42C84CC9F007D7D94 /* Cells */,
 				8CDEEFB42C874D0600E0C6FE /* BreedDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8C9A70D42C84CC9F007D7D94 /* ViewCells */ = {
+		8C9A70D42C84CC9F007D7D94 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				8C9A70D52C84CCDA007D7D94 /* CatViewCell.swift */,
 				8C9A70EE2C865FFA007D7D94 /* LifespanViewCell.swift */,
 			);
-			path = ViewCells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8C9A70D72C84CDA8007D7D94 /* Protocols */ = {
@@ -306,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9A70DB2C84EC08007D7D94 /* UIViewController+ShowAlert.swift */,
+				8CDEEFC12C88A3E800E0C6FE /* UIImageView+LoadImage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -478,11 +487,14 @@
 				8C9A70BD2C84A770007D7D94 /* NetworkHelper.swift in Sources */,
 				8CDEEFB52C874D0600E0C6FE /* BreedDetailsView.swift in Sources */,
 				8C9A70C32C84B0BE007D7D94 /* CatImage.swift in Sources */,
+				8CDEEFBE2C8872EF00E0C6FE /* BreedImageNetworkService.swift in Sources */,
 				8C9A70DC2C84EC08007D7D94 /* UIViewController+ShowAlert.swift in Sources */,
 				8C9A70C92C84BBBE007D7D94 /* HTTPClient.swift in Sources */,
 				8C9A70D92C84CE02007D7D94 /* FavoriteDelegate.swift in Sources */,
 				8C9A70812C84A357007D7D94 /* AppDelegate.swift in Sources */,
 				8CDEEFBA2C87B4C400E0C6FE /* BreedDetailsComposer.swift in Sources */,
+				8CDEEFC22C88A3E800E0C6FE /* UIImageView+LoadImage.swift in Sources */,
+				8CDEEFC02C88730B00E0C6FE /* BreedImageDataLoader.swift in Sources */,
 				8C9A70832C84A357007D7D94 /* SceneDelegate.swift in Sources */,
 				8C9A70DF2C84ED5C007D7D94 /* CatsPresenter.swift in Sources */,
 				8C9A70EB2C864D58007D7D94 /* PersistenceLoader.swift in Sources */,

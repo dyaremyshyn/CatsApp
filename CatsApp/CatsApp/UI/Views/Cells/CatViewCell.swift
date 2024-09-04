@@ -33,7 +33,7 @@ class CatViewCell: UICollectionViewCell {
     private lazy var breedImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "cat")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .darkGray
         return imageView
@@ -94,6 +94,9 @@ class CatViewCell: UICollectionViewCell {
         self.model = model
         breedNameLabel.text = model.name
         favoriteButton.setBackgroundImage(model.isFavorite ? starFillImage : starImage, for: .normal)
+        
+        guard let url = URL(string: model.image?.url ?? "") else { return }
+        breedImageView.loadImage(from: url)
     }
 }
     

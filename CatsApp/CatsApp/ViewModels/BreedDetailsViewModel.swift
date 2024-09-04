@@ -38,7 +38,7 @@ class BreedDetailsViewModel: ObservableObject {
     }   
     
     public var imageURL: URL? {
-        URL(string: "https://api.thecatapi.com/v1/images/\(breed?.referenceImageID ?? "")")
+        URL(string: breed?.image?.url ?? "")
     }
     
     public func toggleFavorite() {

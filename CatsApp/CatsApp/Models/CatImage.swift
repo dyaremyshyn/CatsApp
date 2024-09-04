@@ -7,8 +7,11 @@
 
 import Foundation
 
-struct CatImage: Decodable {
-    let id: String
-    let width, height: Int
-    let url: String
+public struct CatImage: Decodable {
+    let id: String?
+    let url: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, url
+    }
 }

@@ -27,11 +27,14 @@ class CatsViewModel: ObservableObject {
     }
 
     public func loadData() {
+        // Try to get data from DB
         let persistedBreeds = persistenceLoader.getData()
+        // If the retrived data is empty, fetch from network
         guard persistedBreeds.count > 0 else {
             fetchBreeds()
             return
         }
+        // Assign data from DB
         fetchedBreeds = persistedBreeds
         allBreeds = persistedBreeds
     }
@@ -86,6 +89,38 @@ extension CatsViewModel {
                 self.allBreeds = response
                 self.fetchedBreeds = response
                 saveBreedToPersistence()
+                // Get image for each breed
+                self.allBreeds?.forEach { self.fetchBreedImage(for: $0) }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func fetchBreedImage(for breed: CatBreed) {
+        guard let imageID = breed.referenceImageID, let url = URL(string: NetworkHelper.images + imageID + NetworkHelper.apiKey) else { return }
+        
+        let service = BreedImageNetworkService()
+        service.loadData(from: url, given: client)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                case .finished: ()
+                }
+            } receiveValue: { [weak self] response in
+                guard let self = self else { return }
+                self.errorMessage = nil
+
+                if let index = fetchedBreeds?.firstIndex(where: { $0.referenceImageID == imageID }) {
+                    // Update breed in the array
+                    fetchedBreeds?[index].image = response
+                    // Save to DB
+                    persistenceLoader.saveData(catBreed: fetchedBreeds?[index])
+                }
+                if let index = allBreeds?.firstIndex(where: { $0.referenceImageID == imageID }) {
+                    allBreeds?[index].image = response
+                }
             }
             .store(in: &cancellables)
     }
