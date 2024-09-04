@@ -21,6 +21,7 @@ struct NetworkHelper {
         baseUrl + "/v1/images/"
     }
     
+    // WARNING: This is not the correct way of storing an api key!!!
     public static var apiKey: String {
         "?api_key=live_XkPUYswV8ujjoPFiSCBARlvWWEIPfWdO9aPJ3PnXO8l78KYzQMM2kOGfqekLiKdA"
     }
