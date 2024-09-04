@@ -53,7 +53,6 @@ class FavoritesViewModel: ObservableObject {
         var count = 0
         
         favoriteBreeds?.forEach {
-            print($0.lifeSpan)
             let components = $0.lifeSpan?.split(separator: "-").map { $0.trimmingCharacters(in: .whitespaces) }
                     
             if let minValue = Int(components?[0] ?? "0"), let maxValue = Int(components?[1] ?? "0") {

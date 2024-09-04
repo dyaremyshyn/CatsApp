@@ -13,7 +13,6 @@ struct BreedImageNetworkService: BreedImageDataLoader {
         return client.get(from: url)
             .map(\.0)
             .decode(type: CatImage.self, decoder: JSONDecoder())
-            .print()
             .eraseToAnyPublisher()
     }
 }

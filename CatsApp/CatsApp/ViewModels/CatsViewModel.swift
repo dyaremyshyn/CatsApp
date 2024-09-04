@@ -16,12 +16,14 @@ class CatsViewModel: ObservableObject {
     
     private let client: HTTPClient
     private let breedsLoader: BreedsDataLoader
+    private let breedImageLoader: BreedImageDataLoader
     private let persistenceLoader: PersistenceLoader
     private let selection: (CatBreed) -> Void
 
-    init(client: HTTPClient, breedsLoader: BreedsDataLoader, persistenceLoader: PersistenceLoader, selection: @escaping (CatBreed) -> Void) {
+    init(client: HTTPClient, breedsLoader: BreedsDataLoader, breedImageLoader: BreedImageDataLoader, persistenceLoader: PersistenceLoader, selection: @escaping (CatBreed) -> Void) {
         self.client = client
         self.breedsLoader = breedsLoader
+        self.breedImageLoader = breedImageLoader
         self.persistenceLoader = persistenceLoader
         self.selection = selection
     }
@@ -98,8 +100,7 @@ extension CatsViewModel {
     private func fetchBreedImage(for breed: CatBreed) {
         guard let imageID = breed.referenceImageID, let url = URL(string: NetworkHelper.images + imageID + NetworkHelper.apiKey) else { return }
         
-        let service = BreedImageNetworkService()
-        service.loadData(from: url, given: client)
+        breedImageLoader.loadData(from: url, given: client)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 guard let self = self else { return }
